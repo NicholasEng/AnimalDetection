@@ -5,7 +5,7 @@ import datetime
 
 videos = ["LNR408_ch2_main_20180726065707_20180726065726.dav", "LNR408_ch2_main_20180726063934_20180726064007.dav"]
 videos.sort()
-current_video = "Videos/LNR408_ch2_main_20180726065707_20180726065726.dav"
+current_video = "Videos/LNR408_ch0_main_20180726065707_20180726065726.dav.mp4"
 video_dt_format = "%Y%m%d%H%M%S"
 videoTimeStamp = datetime.datetime.strptime(current_video.split("_")[-2], video_dt_format)
 
@@ -14,7 +14,7 @@ videoTimeStamp = datetime.datetime.strptime(current_video.split("_")[-2], video_
 # capture = cv2.VideoCapture(0)
 #capture = cv2.VideoCapture("Videos/natureClip.mp4")
 #capture = cv2.VideoCapture("Videos/Caterpiller.mp4")
-capture = cv2.VideoCapture("Videos/BirdDemo_20180726063934_20180726064007.mp4")
+capture = cv2.VideoCapture(current_video)
 #capture = cv2.VideoCapture("Videos/LNR408_ch2_main_20180726063934_20180726064007.dav")
 #capture = cv2.VideoCapture("Videos/LNR408_ch2_main_20180726065707_20180726065726.dav")
 # Offset of 5 seconds - subtract 5 seconds from filename
