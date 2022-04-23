@@ -7,12 +7,18 @@ from pathlib import Path
 # An idea for a parameter in our future function is whether or not to
 # show a visual as the code runs.
 
+#To-Do
+# - Handle videos that do not have a time stamp in the video name
+# = 
+
 detected_images = {}
 detected_times = []
 videos = []
 video_dir = Path("./Videos")
-for video_path in video_dir.glob("*.dav"):
-    videos.append(str(video_path))
+file_extentions = [".dav", ".mp4"]
+for video_path in video_dir.glob("*"):
+    if (video_path.suffix in file_extentions):
+        videos.append(str(video_path))
 videos.sort()
 
 for video in videos:
@@ -102,3 +108,4 @@ for video in videos:
 with open("detected_times.txt", "w") as output_file:
     for time in detected_times:
         output_file.write(time.strftime(video_dt_format))
+        output_file.write("\n")
